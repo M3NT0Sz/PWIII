@@ -3,11 +3,11 @@
     //$con = mysqli_select_db("clientes", $id);
 
     $nome = $_POST['nome'];
-    $fone = $_POST['fone'];
-    $cpf = $_POST['cpf'];
-    $dtnascimento = $_POST['dtnascimento'];
+    $senha = md5($_POST['senha']);
+    $endereco = $_POST['endereco'];
+    $dtnasc = $_POST['dtnascimento'];
 
-    $sql = "insert into clientes (cli_nome, cli_fone, cli_cpf, cli_dtnascimento) values ('$nome', '$fone', '$cpf', '$dtnascimento')";
+    $sql = "insert into vendedor (ven_nome, ven_senha, ven_endereco, ven_dtnasc) values ('$nome', '$senha', '$endereco', '$dtnasc')";
 
     mysqli_query($id ,$sql);
     mysqli_close($id);

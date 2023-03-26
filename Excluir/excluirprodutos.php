@@ -4,5 +4,5 @@
     $sql = "DELETE from produtos where pro_cod = $cod";
     mysqli_query($id, $sql);
     mysqli_close($id);
-    header("location:consultaprodutos.php");
+    header("location:../Consultas/consultaprodutos.php");
 ?>

@@ -12,5 +12,5 @@
     mysqli_query($id ,$sql);
     mysqli_close($id);
 
-    header("location:principal.html");
+    header("location:../principal.html");
 ?>

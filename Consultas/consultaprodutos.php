@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/relatorios.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/relatorios.css">
     <title>Document</title>
 </head>
 
@@ -47,12 +47,12 @@
                         echo "<br>Quantidade: $quantidade";
                         echo "<br>Preço: $preco";
                         echo "<br>Data de Validade: $dtvalidade";
-                        echo "<br><form name=consulta method=post action=excluirprodutos.php>";
+                        echo "<br><form name=consulta method=post action=../Excluir/excluirprodutos.php>";
                         echo "<input type=hidden name=cod value=$cod>";
                         echo "<div style=flex-direction:row;display:flex;>";
                         echo "<button class=button-6 type=submit role=button>Excluir</button>";
                         echo "</form>";
-                        echo "<form name=altera method=post action=editarprodutos.php>";
+                        echo "<form name=altera method=post action=../Editar/editarprodutos.php>";
                         echo " <input type=hidden name=cod value=$cod> ";
                         echo " <input type=hidden name=nome value=$nome> ";
                         echo " <input type=hidden name=quantidade value=$quantidade> ";
@@ -68,7 +68,7 @@
                 }
                 ?>
             </div>
-            <a href="principal.html"><button class="button-6" type="button" role="button">Voltar</button></a>
+            <a href="../principal.html"><button class="button-6" type="button" role="button">Voltar</button></a>
         </div>
     </div>
 </body>

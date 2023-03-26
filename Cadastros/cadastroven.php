@@ -9,20 +9,20 @@
 </head>
 <body>
     <div class="container">
-        <form name="cadpro" method="post" action="../Gravar/gravarpro.php">
+        <form name="cadpro" method="post" action="../Gravar/gravarven.php">
             <div class="tabela">
                 <h1>Cadastro</h1>
                 <div class="registro">
-                    <h3>Descrição:<input type="text" name="descricao"></h3>
+                    <h3>Nome:<input type="text" name="nome"></h3>
                 </div>
                 <div class="registro">
-                    <h3>Quantidade:<input type="text" name="quantidade"></h3>
+                    <h3>Senha:<input type="password" name="senha"></h3>
                 </div>
                 <div class="registro">
-                    <h3>Preço:<input type="text" name="preco"></h3>
+                    <h3>Endereço:<input type="text" name="endereco"></h3>
                 </div>
                 <div class="registro">
-                    <h3>Data de Validade:<input type="date" name="dtvalidade"></h3>
+                    <h3>Data de Nascimento:<input type="date" name="dtnascimento"></h3>
                 </div>
                 <div class="botoes">
                 <button class="button-6" type="submit" role="button">Criar</button>

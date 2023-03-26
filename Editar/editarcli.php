@@ -11,5 +11,5 @@
 	mysqli_query($id, $sql);
 	mysqli_close($id);
 	
-	header("location:consultaclientes.php");
+	header("location:../Consultas/consultaclientes.php");
 ?>

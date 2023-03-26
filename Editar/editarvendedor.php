@@ -2,7 +2,7 @@
 session_start();
 include_once("../conexao.php");
 $cod = filter_input(INPUT_GET, 'codigo', FILTER_SANITIZE_NUMBER_INT);
-$sql = "SELECT * FROM usuarios WHERE codigo = '$cod'";
+$sql = "SELECT * FROM vendedor WHERE codigo = '$cod'";
 ?>
 
 <!DOCTYPE html>
@@ -25,13 +25,12 @@ $sql = "SELECT * FROM usuarios WHERE codigo = '$cod'";
                     if ($_POST['botao']) {
                         $cod = $_POST['cod'];
                         $nome = $_POST['nome'];
-                        $quantidade = $_POST['quantidade'];
-                        $preco = $_POST['preco'];
-                        $dtvalidade = $_POST['dtvalidade'];
+                        $endereco = $_POST['endereco'];
+                        $dtnascimento = $_POST['dtnascimento'];
                     }
                     ?>
                 </div>
-                <form name=cadcli method=post action=../Gravar/gravaalteraprodutos.php>
+                <form name=cadcli method=post action=../Gravar/gravaralteravendedor.php>
                     <div class="registro">
                         <h3>Código: <input type=text name=cod value=<?php echo $cod; ?> disabled>
                             <input type=hidden name=codigo value=<?php echo $cod; ?>>
@@ -41,13 +40,13 @@ $sql = "SELECT * FROM usuarios WHERE codigo = '$cod'";
                         <h3>Nome: <input value="<?php echo $nome; ?>" type=text name=nome></h3>
                     </div>
                     <div class="registro">
-                        <h3>Quantidade: <input value="<?php echo $quantidade; ?>" type=text name=quantidade></h3>
+                        <h3>Senha: <input value="<?php echo $senha; ?>" type=password name=senha></h3>
                     </div>
                     <div class="registro">
-                        <h3>Preço: <input value="<?php echo $preco; ?>" type=text name=preco></h3>
+                        <h3>Endereco: <input value="<?php echo $endereco; ?>" type=text name=endereco></h3>
                     </div>
                     <div class="registro">
-                        <h3>Data Validade: <input value="<?php echo $dtvalidade; ?>" type=date name=dtvalidade></h3>
+                        <h3>Data Nascimento: <input value="<?php echo $dtnascimento; ?>" type=date name=dtnascimento></h3>
                     </div>
                     <div class="registro">
                         <input class="button-6" role="button" type=reset value=Limpar>

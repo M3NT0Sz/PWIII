@@ -15,10 +15,10 @@
         <div class="tabela">
             <form name="consultar" method="post" action="">
                 <div class="meio">
-                    <h1>Consulta Clientes</h1>
+                    <h1>Consulta Vendedor</h1>
                 </div>
                 <div class="registro">
-                    <h3>Nome:<input type="text" name="nome"></h3>
+                    <h3>Vendedor:<input type="text" name="nome"></h3>
                     <input class="button-6" type="submit" role="button" name="consultar" value="Consultar">
                 </div>
             </form>
@@ -28,36 +28,34 @@
                 $id = mysqli_connect("localhost", "root", "", "clientes");
                 if ($_POST['consultar']) {
                     $nome = $_POST['nome'];
-                    $sql = "SELECT * FROM clientes WHERE cli_nome like '%$nome%'";
+                    $sql = "SELECT * FROM vendedor WHERE ven_nome like '%$nome%'";
                 } else {
-                    $sql = "SELECT * FROM clientes";
+                    $sql = "SELECT * FROM vendedor";
                 }
                 $resultado = mysqli_query($id, $sql);
                 while ($obj = mysqli_fetch_array($resultado)) {
                     $cod = $obj[0];
                     $nome = $obj[1];
-                    $tel = $obj[2];
-                    $cpf = $obj[3];
+                    $endereco = $obj[3];
                     $dtnascimento = $obj[4];
                 ?>
                     <div class="letras">
                         <?php
                         echo "<br>Codigo: $cod";
                         echo "<br>Nome: $nome";
-                        echo "<br>Telefone: $tel";
-                        echo "<br>CPF: $cpf";
-                        echo "<br>Data de Nascimento:$dtnascimento";
-                        echo "<br><form name=consulta method=post action=../Excluir/excluirclientes.php>";
+                        echo "<br>Endereco: $endereco";
+                        echo "<br>Data de Nascimento: $dtnascimento";
+                        echo "<br><form name=consulta method=post action=../Excluir/excluirvendedor.php>";
                         echo "<input type=hidden name=cod value=$cod>";
                         echo "<div style=flex-direction:row;display:flex;>";
                         echo "<button class=button-6 type=submit role=button>Excluir</button>";
                         echo "</form>";
-                        echo "<form name=altera method=post action=../Editar/editarclientes.php>";
+                        echo "<form name=altera method=post action=../Editar/editarvendedor.php>";
                         echo " <input type=hidden name=cod value=$cod> ";
                         echo " <input type=hidden name=nome value=$nome> ";
-                        echo " <input type=hidden name=fone value=$tel> ";
-                        echo " <input type=hidden name=cpf value=$cpf> ";
-                        echo " <input type=hidden name=dtnascimento value=$dtnascimento> ";
+                        echo " <input type=hidden name=senha value=$senha> ";
+                        echo " <input type=hidden name=endereco value=$endereco> ";
+                        Echo " <input type=hidden name=dtnascimento value=$dtnascimento> ";
                         echo " <input class=button-6 name=botao type=submit role=button value=Editar>";
                         echo "</div>";
                         echo "</form>";
