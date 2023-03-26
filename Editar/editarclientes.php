@@ -32,7 +32,7 @@ $sql = "SELECT * FROM usuarios WHERE codigo = '$cod'";
                     }
                     ?>
                 </div>
-                <form name=cadcli method=post action=../Gravar/gravaalteraclientes.php>
+                <form name=cadcli method=post action=editarcli.php>
                     <div class="registro">
                         <h3>Código: <input type=text name=cod value=<?php echo $cod; ?> disabled>
                             <input type=hidden name=codigo value=<?php echo $cod; ?>>
@@ -40,6 +40,9 @@ $sql = "SELECT * FROM usuarios WHERE codigo = '$cod'";
                     </div>
                     <div class="registro">
                         <h3>Nome: <input value="<?php echo $nome; ?>" type=text name=nome></h3>
+                    </div>
+                    <div class="registro">
+                        <h3>Senha: <input value="<?php echo $senha; ?>" type="password" name=senha></h3>
                     </div>
                     <div class="registro">
                         <h3>Telefone: <input value="<?php echo $fone; ?>" type=text name=fone></h3>

@@ -3,15 +3,15 @@
     $nome = $_POST['nome'];
     $senha = md5($_POST['senha']);
     
-    $sql = "SELECT * FROM vendedor WHERE ven_nome = '$nome' and ven_senha = '$senha' LIMIT 1";
+    $sql = "SELECT * FROM clientes WHERE cli_nome = '$nome' and cli_senha = '$senha' LIMIT 1";
     $comando = mysqli_query($id, $sql);
     $row_usuario = mysqli_fetch_array($comando);
 	mysqli_close($id);
 
     if(mysqli_num_rows($comando) == 1)
     {
-        $_SESSION['vendedor'] = $row_usuario['ven_nome'];
-        header("Location: ../vendedor.php");
+        $_SESSION['cliente'] = $row_usuario['cli_nome'];
+        header("Location: ../clientes.php");
     }
     else
     {

@@ -36,9 +36,9 @@
                 while ($obj = mysqli_fetch_array($resultado)) {
                     $cod = $obj[0];
                     $nome = $obj[1];
-                    $tel = $obj[2];
-                    $cpf = $obj[3];
-                    $dtnascimento = $obj[4];
+                    $tel = $obj[3];
+                    $cpf = $obj[4];
+                    $dtnascimento = $obj[5];
                 ?>
                     <div class="letras">
                         <?php
@@ -55,6 +55,7 @@
                         echo "<form name=altera method=post action=../Editar/editarclientes.php>";
                         echo " <input type=hidden name=cod value=$cod> ";
                         echo " <input type=hidden name=nome value=$nome> ";
+                        echo " <input type=hidden name=senha value=$senha> ";
                         echo " <input type=hidden name=fone value=$tel> ";
                         echo " <input type=hidden name=cpf value=$cpf> ";
                         echo " <input type=hidden name=dtnascimento value=$dtnascimento> ";

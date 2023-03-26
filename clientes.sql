@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Mar-2023 às 16:36
+-- Generation Time: 26-Mar-2023 às 19:57
 -- Versão do servidor: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `clientes` (
   `cli_cod` int(11) NOT NULL AUTO_INCREMENT,
   `cli_nome` varchar(150) NOT NULL,
+  `cli_senha` varchar(200) NOT NULL,
   `cli_fone` varchar(20) NOT NULL,
   `cli_cpf` varchar(15) NOT NULL,
   `cli_dtnascimento` date NOT NULL,
@@ -39,10 +40,10 @@ CREATE TABLE IF NOT EXISTS `clientes` (
 -- Extraindo dados da tabela `clientes`
 --
 
-INSERT INTO `clientes` (`cli_cod`, `cli_nome`, `cli_fone`, `cli_cpf`, `cli_dtnascimento`) VALUES
-(1, 'Matheus', '129332412', '12312345', '2005-08-26'),
-(4, 'pao', '123123123', '21321231513', '2023-04-01'),
-(6, 'Queijo', '1234567890', '12312368', '2015-02-26');
+INSERT INTO `clientes` (`cli_cod`, `cli_nome`, `cli_senha`, `cli_fone`, `cli_cpf`, `cli_dtnascimento`) VALUES
+(1, 'Matheus', '81dc9bdb52d04dc20036dbd8313ed055', '129332412', '12312345', '2005-08-26'),
+(4, 'pao', '', '123123123', '21321231513', '2023-04-01'),
+(6, 'Queijo', '', '1234567890', '12312368', '2015-02-26');
 
 -- --------------------------------------------------------
 
