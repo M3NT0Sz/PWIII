@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once("conexao.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +18,12 @@
     <div class="container">
         <form action="Entrar/entrarcli.php" method="post">
             <div class="tabela">
+                <h3><?php
+                    if (isset($_SESSION['erro'])) {
+                        echo $_SESSION['erro'];
+                        unset ($_SESSION['erro']);
+                    }
+                    ?></h3>
                 <h1>Login Cliente</h1>
                 <div class="registro">
                     <h3>Nome: <input type="text" name="nome"></h3>

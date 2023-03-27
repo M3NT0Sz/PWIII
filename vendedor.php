@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once("conexao.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,12 +17,11 @@
 <body>
     <div class="container">
         <div class="tabela">
-            <?php
-                if(isset($_SESSION['vendedor']))
-                {
+            <h3><?php
+                if (isset($_SESSION['vendedor'])) {
                     echo $_SESSION['vendedor'];
                 }
-            ?>
+                ?></h3>
             <h1>Cadastros</h1>
             <a href="Cadastros/cadastropro.php"><button class="button-6 bt_arrumar" role="button">Cadastro de
                     Produtos</button></a>
