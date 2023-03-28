@@ -11,7 +11,7 @@
 
     if(mysqli_num_rows($comando) == 1)
     {
-        $_SESSION['vendedor'] = "Vendedor: " . $row_usuario['ven_nome'];
+        $_SESSION['vendedor'] = $row_usuario['ven_nome'];
         header("Location: ../vendedor.php");
     }
     else

@@ -9,7 +9,7 @@
     $row_usuario = mysqli_fetch_array($result);  
     if(mysqli_num_rows($result) == 1)
     { 
-        $_SESSION['login'] = "Cliente: " . $row_usuario['cli_nome'];
+        $_SESSION['login'] = $row_usuario['cli_nome'];
         header("Location: ../clientes.php");
     }
     else

@@ -17,13 +17,13 @@ include_once("conexao.php");
 <body>
     <div class="container">
         <div class="tabela">
-            <h3><?php
+            <h1>Seja bem vindo: <?php
             if (isset($_SESSION['login'])) {
                 echo $_SESSION['login'];
             }
-            ?></h3>
+            ?></h1>
             <h1>Compras</h1>
-            <a href="Cadastros/cadastrocli.php"><button class="button-6 bt_arrumar" role="button">Comprar</button></a>
+            <a href="comprar.php"><button class="button-6 bt_arrumar" role="button">Comprar</button></a>
             <h1>Cadastros</h1>
             <a href="Cadastros/cadastrocli.php"><button class="button-6 bt_arrumar" role="button">Cadastro de
                     Clientes</button></a>

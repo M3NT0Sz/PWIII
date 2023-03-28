@@ -33,6 +33,7 @@ include_once("conexao.php");
                 </div>
                 <div class="registro">
                     <button class="button-6" role="button">Entrar</button>
+                    <a href="Cadastros/cadastrocli.php"><button class="button-6" type="button" role="button">Cadastrar</button></a>
                 </div>
             </div>
         </form>

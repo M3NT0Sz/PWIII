@@ -16,6 +16,9 @@
                     <h3>Nome:<input type="text" name="nome"></h3>
                 </div>
                 <div class="registro">
+                    <h3>Senha:<input type="password" name="senha"></h3>
+                </div>
+                <div class="registro">
                     <h3>Telefone:<input type="text" name="fone"></h3>
                 </div>
                 <div class="registro">

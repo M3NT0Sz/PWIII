@@ -25,6 +25,7 @@ $sql = "SELECT * FROM usuarios WHERE codigo = '$cod'";
                     if ($_POST['botao']) {
                         $cod = $_POST['cod'];
                         $nome = $_POST['nome'];
+                        $produto = $_POST['produto'];
                         $quantidade = $_POST['quantidade'];
                         $preco = $_POST['preco'];
                         $dtvalidade = $_POST['dtvalidade'];
@@ -39,6 +40,9 @@ $sql = "SELECT * FROM usuarios WHERE codigo = '$cod'";
                     </div>
                     <div class="registro">
                         <h3>Nome: <input value="<?php echo $nome; ?>" type=text name=nome></h3>
+                    </div>
+                    <div class="registro">
+                        <h3>Produto: <input value="<?php echo $produto; ?>" type=text name=produto></h3>
                     </div>
                     <div class="registro">
                         <h3>Quantidade: <input value="<?php echo $quantidade; ?>" type=text name=quantidade></h3>
