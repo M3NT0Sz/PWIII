@@ -22,52 +22,66 @@
                     <input class="button-6" type="submit" role="button" name="consultar" value="Consultar">
                 </div>
             </form>
-            <div class="tamanho">
-                <?php
-                error_reporting(0);
-                $id = mysqli_connect("localhost", "root", "", "clientes");
-                if ($_POST['consultar']) {
-                    $nome = $_POST['nome'];
-                    $sql = "SELECT * FROM produtos WHERE pro_nome like '%$nome%'";
-                } else {
-                    $sql = "SELECT * FROM produtos";
-                }
-                $resultado = mysqli_query($id, $sql);
-                while ($obj = mysqli_fetch_array($resultado)) {
-                    $cod = $obj[0];
-                    $nome = $obj[1];
-                    $produto = $obj[2];
-                    $quantidade = $obj[3];
-                    $preco = $obj[4];
-                    $dtvalidade = $obj[5];
-                ?>
-                    <div class="letras">
-                        <?php
-                        echo "<br>Codigo: $cod";
-                        echo "<br>Vendedor: $nome";
-                        echo "<br>Produto: $produto";
-                        echo "<br>Quantidade: $quantidade";
-                        echo "<br>Preço: $preco";
-                        echo "<br>Data de Validade: $dtvalidade";
-                        echo "<div style=flex-direction:row;display:flex;>";
-                        echo "<form name=altera method=post action=Comprar/comprar.php>";
-                        echo " <input type=hidden name=cod value=$cod> ";
-                        echo " <input type=hidden name=nome value=$nome> ";
-                        echo " <input type=hidden name=produto value=$produto> ";
-                        echo " <input type=hidden name=quantidade value=$quantidade> ";
-                        echo " <input type=hidden name=preco value=$preco> ";
-                        Echo " <input type=hidden name=dtvalidade value=$dtvalidade> ";
-                        echo " <input class=button-6 name=botao type=submit role=button value=Comprar>";
-                        echo "</div>";
-                        echo "</form>";
-                        ?>
-                    </div>
-                <?php
-                    echo "<hr>";
-                }
-                ?>
-            </div>
-            <a href="clientes.php"><button class="button-6" type="button" role="button">Voltar</button></a>
+            <form action="Comprar/comprar.php" method="post" style="width: 100%;">
+                <div class="tamanho">
+                    <?php
+                    $num = 0;
+                    error_reporting(0);
+                    $id = mysqli_connect("localhost", "root", "", "clientes");
+                    if ($_POST['consultar']) {
+                        $nome = $_POST['nome'];
+                        $sql = "SELECT * FROM produtos WHERE pro_nome like '%$nome%'";
+                    } else {
+                        $sql = "SELECT * FROM produtos";
+                    }
+                    $resultado = mysqli_query($id, $sql);
+                    while ($obj = mysqli_fetch_array($resultado)) {
+                        $cod = $obj[0];
+                        $nome = $obj[1];
+                        $produto = $obj[2];
+                        $quantidade = $obj[3];
+                        $preco = $obj[4];
+                        $dtvalidade = $obj[5];
+                    ?>
+                        <div class="letras">
+                            <?php
+                            echo "<br>Codigo: $cod";
+                            echo "<br>Vendedor: $nome";
+                            echo "<br>Produto: $produto";
+                            echo "<br>Quantidade: $quantidade";
+                            echo "<br>Preço: R$$preco";
+                            echo "<br>Data de Validade: $dtvalidade";
+                            echo "<div style=flex-direction:row;display:flex;>";
+                            echo " <input type=hidden name=cod value=$cod> ";
+                            echo " <input type=hidden name=nome value=$nome> ";
+                            echo " <input type=hidden name=produto value=$produto> ";
+                            echo " <input type=hidden name=quantidade value=$quantidade> ";
+                            echo " <input type=hidden name=preco value=R$$preco> ";
+                            echo " <input type=hidden name=dtvalidade value=$dtvalidade> ";
+                            echo "<br>Quantos deseja comprar: <input type='number' min=0 max=$quantidade name=con" . $cod . "> ";
+                            echo "</div>";
+
+                            if ($quantidade >= 1) {
+                            $_SESSION['prod'] = "
+                            <br>Codigo: $cod
+                            <br>Vendedor: $nome
+                            <br>Produto: $produto
+                            <br>Quantidade: $quantidade
+                            <br>Preço: R$$preco
+                            <br>Data de Validade: $dtvalidade";
+                            }
+                            ?>
+                        </div>
+                    <?php
+                        echo "<hr>";
+                    }
+                    ?>
+                </div>
+                <div class="botoes">
+                    <a href="Comprar/comprar.php"><input class=button-6 name=botao type=submit role=button value=Comprar></a>
+                    <a href="clientes.php"><button class="button-6" role="button">Voltar</button></a>
+                </div>
+            </form>
         </div>
     </div>
 </body>

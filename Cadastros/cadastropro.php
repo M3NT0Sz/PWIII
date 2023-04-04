@@ -26,7 +26,7 @@
                 </div>
                 <div class="botoes">
                 <button class="button-6" type="submit" role="button">Criar</button>
-                <a href="../principal.html"><button class="button-6" type="button" role="button">Voltar</button></a>
+                <a href="../index.html"><button class="button-6" type="button" role="button">Voltar</button></a>
                 </div>
             </div>
         </form>
