@@ -1,23 +1,24 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.4
--- http://www.phpmyadmin.net
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Mar-2023 às 19:31
--- Versão do servidor: 5.6.15-log
--- PHP Version: 5.5.8
+-- Tempo de geração: 08-Abr-2023 às 05:05
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `clientes`
+-- Banco de dados: `clientes`
 --
 
 -- --------------------------------------------------------
@@ -26,15 +27,14 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `clientes`
 --
 
-CREATE TABLE IF NOT EXISTS `clientes` (
-  `cli_cod` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `clientes` (
+  `cli_cod` int(11) NOT NULL,
   `cli_nome` varchar(150) NOT NULL,
   `cli_senha` varchar(200) NOT NULL,
   `cli_fone` varchar(20) NOT NULL,
   `cli_cpf` varchar(15) NOT NULL,
-  `cli_dtnascimento` date NOT NULL,
-  PRIMARY KEY (`cli_cod`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+  `cli_dtnascimento` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `clientes`
@@ -52,15 +52,14 @@ INSERT INTO `clientes` (`cli_cod`, `cli_nome`, `cli_senha`, `cli_fone`, `cli_cpf
 -- Estrutura da tabela `produtos`
 --
 
-CREATE TABLE IF NOT EXISTS `produtos` (
-  `pro_cod` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `produtos` (
+  `pro_cod` int(11) NOT NULL,
   `pro_vendedor` varchar(200) NOT NULL,
   `pro_descricao` varchar(300) NOT NULL,
   `pro_quantidade` int(11) NOT NULL,
   `pro_preco` float NOT NULL,
-  `pro_dtvalidade` date NOT NULL,
-  PRIMARY KEY (`pro_cod`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+  `pro_dtvalidade` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `produtos`
@@ -78,14 +77,13 @@ INSERT INTO `produtos` (`pro_cod`, `pro_vendedor`, `pro_descricao`, `pro_quantid
 -- Estrutura da tabela `vendedor`
 --
 
-CREATE TABLE IF NOT EXISTS `vendedor` (
-  `ven_cod` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `vendedor` (
+  `ven_cod` int(11) NOT NULL,
   `ven_nome` varchar(150) NOT NULL,
   `ven_senha` varchar(200) NOT NULL,
   `ven_endereco` varchar(100) NOT NULL,
-  `ven_dtnasc` date NOT NULL,
-  PRIMARY KEY (`ven_cod`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `ven_dtnasc` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `vendedor`
@@ -94,6 +92,51 @@ CREATE TABLE IF NOT EXISTS `vendedor` (
 INSERT INTO `vendedor` (`ven_cod`, `ven_nome`, `ven_senha`, `ven_endereco`, `ven_dtnasc`) VALUES
 (1, 'Matheus', '81dc9bdb52d04dc20036dbd8313ed055', 'Rua 01', '2005-08-26'),
 (2, 'Paulo', 'e10adc3949ba59abbe56e057f20f883e', 'Rua 02', '2006-04-19');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`cli_cod`);
+
+--
+-- Índices para tabela `produtos`
+--
+ALTER TABLE `produtos`
+  ADD PRIMARY KEY (`pro_cod`);
+
+--
+-- Índices para tabela `vendedor`
+--
+ALTER TABLE `vendedor`
+  ADD PRIMARY KEY (`ven_cod`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `cli_cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de tabela `produtos`
+--
+ALTER TABLE `produtos`
+  MODIFY `pro_cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de tabela `vendedor`
+--
+ALTER TABLE `vendedor`
+  MODIFY `ven_cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

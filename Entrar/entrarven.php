@@ -7,7 +7,6 @@
     $sql = "SELECT * FROM vendedor WHERE ven_nome = '$nome' and ven_senha = '$senha' LIMIT 1";
     $comando = mysqli_query($conn, $sql);
     $row_usuario = mysqli_fetch_array($comando);
-	mysqli_close($id);
 
     if(mysqli_num_rows($comando) == 1)
     {

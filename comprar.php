@@ -22,10 +22,8 @@
                     <input class="button-6" type="submit" role="button" name="consultar" value="Consultar">
                 </div>
             </form>
-            <form action="Comprar/comprar.php" method="post" style="width: 100%;">
                 <div class="tamanho">
                     <?php
-                    $num = 0;
                     error_reporting(0);
                     $id = mysqli_connect("localhost", "root", "", "clientes");
                     if ($_POST['consultar']) {
@@ -49,27 +47,19 @@
                             echo "<br>Vendedor: $nome";
                             echo "<br>Produto: $produto";
                             echo "<br>Quantidade: $quantidade";
-                            echo "<br>Preço: R$$preco";
+                            echo "<br>Preço: $preco";
                             echo "<br>Data de Validade: $dtvalidade";
                             echo "<div style=flex-direction:row;display:flex;>";
+                            echo "<form action=Comprar/comprar.php method=post style=width: 100%;>";
                             echo " <input type=hidden name=cod value=$cod> ";
                             echo " <input type=hidden name=nome value=$nome> ";
                             echo " <input type=hidden name=produto value=$produto> ";
                             echo " <input type=hidden name=quantidade value=$quantidade> ";
-                            echo " <input type=hidden name=preco value=R$$preco> ";
+                            echo " <input type=hidden name=preco value=$preco> ";
                             echo " <input type=hidden name=dtvalidade value=$dtvalidade> ";
-                            echo "<br>Quantos deseja comprar: <input type='number' min=0 max=$quantidade name=con" . $cod . "> ";
+                            echo " <input class=button-6 name=botao type=submit role=button value=Comprar>";
                             echo "</div>";
-
-                            if ($quantidade >= 1) {
-                            $_SESSION['prod'] = "
-                            <br>Codigo: $cod
-                            <br>Vendedor: $nome
-                            <br>Produto: $produto
-                            <br>Quantidade: $quantidade
-                            <br>Preço: R$$preco
-                            <br>Data de Validade: $dtvalidade";
-                            }
+                            echo "</form>";
                             ?>
                         </div>
                     <?php
@@ -78,10 +68,9 @@
                     ?>
                 </div>
                 <div class="botoes">
-                    <a href="Comprar/comprar.php"><input class=button-6 name=botao type=submit role=button value=Comprar></a>
-                    <a href="clientes.php"><button class="button-6" role="button">Voltar</button></a>
+                    <a href="clientes.php"><button class="button-6" type="button" role="button">Voltar</button></a>
+                    <a href="carrinho.php"><button class="button-6" type="button" role="button">Ver carrinho</button></a>
                 </div>
-            </form>
         </div>
     </div>
 </body>
