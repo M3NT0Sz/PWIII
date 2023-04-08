@@ -11,7 +11,7 @@ $quantidade = $_POST['quantidade'];
 $preco = $_POST['preco'];
 $dtvalidade = $_POST['dtvalidade'];
 
-$preco = $quantcomp * $preco; 
+$preco = $quantcomp * $preco;
 
 // Verifique se o carrinho de compras já existe na sessão do usuário
 if (!isset($_SESSION['carrinho'])) {
@@ -29,8 +29,14 @@ $_SESSION['carrinho'][] = array(
     'preco' => $preco,
     'dtvalidade' => $dtvalidade
 );
-
-// Exiba uma mensagem de confirmação para o usuário
-echo "Produto adicionado ao carrinho com sucesso!";
-echo "<a href=../comprar.php><button>Continuar comprando</button></a>";
-echo "<a href=../carrinho.php><button>Ver carrinho</button></a>";
+?>
+<link rel="stylesheet" href="../CSS/style.css">
+<div class="container">
+    <div class="tabela">
+        <?php
+        echo "<h3>Produto adicionado ao carrinho com sucesso!</h3>";
+        echo "<a href=../comprar.php><button class=button-6>Continuar comprando</button></a>";
+        echo "<a href=../carrinho.php><button class=button-6>Ver carrinho</button></a>";
+        ?>
+    </div>
+</div>

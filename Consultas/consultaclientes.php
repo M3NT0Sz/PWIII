@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/relatorios.css">
-    <title>Document</title>
+    <title>Consulta Clientes</title>
 </head>
 
 <body>
@@ -69,7 +69,7 @@
                 }
                 ?>
             </div>
-            <a href="../principal.html"><button class="button-6" type="button" role="button">Voltar</button></a>
+            <a href="../clientes.php"><button class="button-6" type="button" role="button">Voltar</button></a>
         </div>
     </div>
 </body>

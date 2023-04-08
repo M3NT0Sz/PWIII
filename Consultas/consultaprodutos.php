@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/relatorios.css">
-    <title>Document</title>
+    <title>Consulta Produtos</title>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
         <div class="tabela">
             <form name="consultar" method="post" action="">
                 <div class="meio">
-                    <h1>Consulta Clientes</h1>
+                    <h1>Consulta Produtos</h1>
                 </div>
                 <div class="registro">
                     <h3>Produto:<input type="text" name="nome"></h3>
@@ -28,7 +28,7 @@
                 $id = mysqli_connect("localhost", "root", "", "clientes");
                 if ($_POST['consultar']) {
                     $nome = $_POST['nome'];
-                    $sql = "SELECT * FROM produtos WHERE pro_nome like '%$nome%'";
+                    $sql = "SELECT * FROM produtos WHERE pro_descricao like '%$nome%'";
                 } else {
                     $sql = "SELECT * FROM produtos";
                 }

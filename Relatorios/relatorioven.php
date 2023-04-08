@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/relatorios.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar</title>
+    <title>Relatório Vendedor</title>
 </head>
 
 <body>
     <div class="container">
         <div class="tabela">
-            <h2>Relatório de Clientes</h2>
+            <h2>Relatório de Vendedor</h2>
             <div class="tamanho">
                 <h4><?php
                     $id = mysqli_connect("localhost", "root", "", "clientes");
@@ -41,7 +41,7 @@
                 </h4>
             </div>
             <div class="botoes">
-                <a href="../principal.html"><button class="button-6" type="button" role="button">Voltar</button></a>
+                <a href="../vendedor.php"><button class="button-6" type="button" role="button">Voltar</button></a>
             </div>
         </div>
     </div>

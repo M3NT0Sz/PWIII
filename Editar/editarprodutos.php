@@ -13,13 +13,13 @@ $sql = "SELECT * FROM usuarios WHERE codigo = '$cod'";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../CSS/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar</title>
+    <title>Editar Produtos</title>
 </head>
 
 <body>
     <div class="container">
             <div class="tabela">
-                <h1>Editar Clientes</h1>
+                <h1>Editar Produtos</h1>
                 <div class="registro">
                     <?php
                     if ($_POST['botao']) {
@@ -54,7 +54,7 @@ $sql = "SELECT * FROM usuarios WHERE codigo = '$cod'";
                         <h3>Data Validade: <input value="<?php echo $dtvalidade; ?>" type=date name=dtvalidade></h3>
                     </div>
                     <div class="registro">
-                        <input class="button-6" role="button" type=reset value=Limpar>
+                        <a href="../vendedor.php"><button class="button-6" type="button" role="button">Voltar</button></a>
                         <input class="button-6" role="button" type=submit name=alterar value=Alterar>
                     </div>
                 </form>

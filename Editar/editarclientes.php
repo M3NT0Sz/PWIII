@@ -13,7 +13,7 @@ $sql = "SELECT * FROM usuarios WHERE codigo = '$cod'";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../CSS/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar</title>
+    <title>Editar Clientes</title>
 </head>
 
 <body>
@@ -55,7 +55,7 @@ $sql = "SELECT * FROM usuarios WHERE codigo = '$cod'";
                     </div>
                     <div class="registro">
                         <input class="button-6" role="button" type=reset value=Limpar>
-                        <input class="button-6" role="button" type=submit name=alterar value=Alterar>
+                        <a href="../clientes.php"><button class="button-6" type="button" role="button">Voltar</button></a>
                     </div>
                 </form>
             </div>

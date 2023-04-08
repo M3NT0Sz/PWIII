@@ -35,11 +35,15 @@ include_once("conexao.php");
                     Produtos</button></a>
             <a href="Relatorios/relatorioven.php"><button class="button-6 bt_arrumar" role="button">Relatório de
                     Vendedor</button></a>
+            <a href="Relatorios/relatoriocom.php"><button class="button-6 bt_arrumar" role="button">Relatório de
+                    Compras</button></a>
             <h1>Consultas</h1>
             <a href="Consultas/consultaprodutos.php"><button class="button-6 bt_arrumar" role="button">Consulta de
                     Produtos</button></a>
             <a href="Consultas/consultavendedor.php"><button class="button-6 bt_arrumar" role="button">Consulta de
                     Vendedor</button></a>
+            <a href="Consultas/consultacompra.php"><button class="button-6 bt_arrumar" role="button">Consulta de
+                    Compras</button></a>
             <hr color="black" width="100%">
             <a href="sair.php"><button class="button-6 bt_arrumar" role="button">Sair</button></a>
         </div>

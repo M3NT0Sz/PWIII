@@ -6,33 +6,36 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/relatorios.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório Clientes</title>
+    <title>Relatório Compras</title>
 </head>
 <body>
     <div class="container">
         <form name="cadcli" method="post" action="../Gravar/gravarcli.php">
             <div class="tabela">
-                <h2>Relatório de Clientes</h2>
+                <h2>Relatório de Compras</h2>
                 <div class="tamanho">
                 <h4><?php
                     $id = mysqli_connect("localhost", "root", "", "clientes");
 
-                    $sql = "SELECT * FROM clientes";
+                    $sql = "SELECT * FROM compra";
                     $resultado = mysqli_query($id, $sql);
                     while($obj = mysqli_fetch_array($resultado)){
                         $cod = $obj[0];
-                        $nome = $obj[1];
-                        $tel = $obj[3];
-                        $cpf = $obj[4];
-                        $dtnascimento = $obj[5];
-                        ?>
-                        <div class="letras">
-                    <?php
-                        echo "<br>Codigo: $cod";
-                        echo "<br>Nome: $nome";
-                        echo "<br>Telefone: $tel";
-                        echo "<br>CPF: $cpf";
-                        echo "<br>Data de Nascimento:$dtnascimento";
+                        $vendedor = $obj[1];
+                        $comprador = $obj[2];
+                        $produto = $obj[3];
+                        $quantidade = $obj[4];
+                        $preco = $obj[5];
+                        $data = $obj[6];
+                    ?>
+                    <div class="letras">
+                        <?php
+                        echo "<br>Codigo de compra: $cod";
+                        echo "<br>Vendedor: $vendedor";
+                        echo "<br>Comprador: $comprador";
+                        echo "<br>Quantidade: $quantidade";
+                        echo "<br>Preço: R$$preco";
+                        echo "<br>Data de compra: $data";
                         ?>
                         </div>
                         <?php
@@ -41,7 +44,7 @@
                 ?></h4>
                 </div>
                 <div class="botoes">
-                    <a href="../clientes.php"><button class="button-6" type="button" role="button">Voltar</button></a>
+                    <a href="../vendedor.php"><button class="button-6" type="button" role="button">Voltar</button></a>
                 </div>
             </div>
         </form>

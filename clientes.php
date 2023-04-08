@@ -17,11 +17,14 @@ include_once("conexao.php");
 <body>
     <div class="container">
         <div class="tabela">
-            <h1>Seja bem vindo: <?php
-            if (isset($_SESSION['login'])) {
-                echo $_SESSION['login'];
-            }
-            ?></h1>
+            <h1>Seja bem vindo:
+                <?php
+                if (isset($_SESSION['login'])) {
+                    echo $_SESSION['login'];
+                }
+                ?>
+            </h1>
+            <hr color="black" width="100%">
             <h1>Compras</h1>
             <a href="comprar.php"><button class="button-6 bt_arrumar" role="button">Comprar</button></a>
             <h1>Cadastros</h1>
@@ -33,6 +36,7 @@ include_once("conexao.php");
             <h1>Consultas</h1>
             <a href="Consultas/consultaclientes.php"><button class="button-6 bt_arrumar" role="button">Consulta de
                     Clientes</button></a>
+            <hr color="black" width="100%">
             <a href="sair.php"><button class="button-6 bt_arrumar" role="button">Sair</button></a>
         </div>
     </div>

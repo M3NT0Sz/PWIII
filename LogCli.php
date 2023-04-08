@@ -11,7 +11,7 @@ include_once("conexao.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
-    <title>Document</title>
+    <title>Login Clientes</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@ include_once("conexao.php");
                         unset ($_SESSION['erro']);
                     }
                     ?></h3>
-                <h1>Login Cliente</h1>
+                <h1>Login Clientes</h1>
                 <div class="registro">
                     <h3>Nome: <input type="text" name="nome"></h3>
                 </div>

@@ -34,7 +34,7 @@ if ($_POST['botao']) {
                         echo "<br>Vendedor: $nome";
                         echo "<br>Produto: $produto";
                         echo "<br>Estoque: $quantidade";
-                        echo "<br>Quantidade:<input type=number name=quantcomp>";
+                        echo "<br>Quantidade:<input type=number name=quantcomp min=0 max=$quantidade>";
                         echo "<br>Preço: $preco";
                         echo "<br>Data de Validade: $dtvalidade";
                         echo " <input type=hidden name=cod value=$cod> ";

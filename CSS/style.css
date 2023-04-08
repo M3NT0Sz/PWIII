@@ -55,6 +55,9 @@ a{
 
 .botoes{
     display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 .relatoriocli{
