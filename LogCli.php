@@ -35,6 +35,7 @@ include_once("conexao.php");
                     <button class="button-6" role="button">Entrar</button>
                     <a href="Cadastros/cadastrocli.php"><button class="button-6" type="button" role="button">Cadastrar</button></a>
                 </div>
+                <a href="index.html"><button class="button-6" type="button" role="button">Voltar</button></a>
             </div>
         </form>
     </div>

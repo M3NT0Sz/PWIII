@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Abr-2023 às 16:03
+-- Tempo de geração: 10-Abr-2023 às 14:06
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.0.25
 
@@ -56,6 +56,7 @@ CREATE TABLE `compra` (
   `com_comprador` varchar(200) NOT NULL,
   `com_produto` varchar(200) NOT NULL,
   `com_quantidade` int(11) NOT NULL,
+  `com_preco` float NOT NULL,
   `com_preco_total` float NOT NULL,
   `com_data` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -64,19 +65,13 @@ CREATE TABLE `compra` (
 -- Extraindo dados da tabela `compra`
 --
 
-INSERT INTO `compra` (`com_cod`, `com_vendedor`, `com_comprador`, `com_produto`, `com_quantidade`, `com_preco_total`, `com_data`) VALUES
-(36, 'Matheus', 'Matheus', 'Bisteca', 5, 75, '2023-04-08 10:12:51'),
-(37, 'Matheus', 'Matheus', 'Hamburguer', 5, 100, '2023-04-08 10:12:51'),
-(40, 'Matheus', 'Paulo', 'Lasanha', 2, 40, '2023-04-08 10:39:15'),
-(41, 'Matheus', 'Paulo', 'Lasanha', 2, 40, '2023-04-08 10:39:33'),
-(42, 'Matheus', 'Matheus', 'Queijo', 2, 38, '2023-04-08 10:46:03'),
-(43, 'Matheus', 'Matheus', 'Queijo', 2, 38, '2023-04-08 10:46:03'),
-(44, 'Matheus', 'Matheus', 'Queijo', 2, 38, '2023-04-08 10:48:30'),
-(45, 'Matheus', 'Matheus', 'Queijo', 2, 38, '2023-04-08 10:48:30'),
-(46, 'Matheus', 'Matheus', 'Queijo', 2, 38, '2023-04-08 11:00:22'),
-(47, 'Matheus', 'Matheus', 'Lasanha', 2, 40, '2023-04-08 11:00:22'),
-(48, 'Matheus', 'Matheus', 'Bisteca', 5, 75, '2023-04-08 11:00:22'),
-(49, 'Matheus', 'Matheus', 'Alface', 5, 45, '2023-04-08 11:00:22');
+INSERT INTO `compra` (`com_cod`, `com_vendedor`, `com_comprador`, `com_produto`, `com_quantidade`, `com_preco`, `com_preco_total`, `com_data`) VALUES
+(54, 'Matheus', 'Matheus', 'Queijo', 2, 38, 0, '2023-04-10 08:56:49'),
+(55, 'Matheus', 'Matheus', 'Lasanha', 2, 40, 80, '2023-04-10 00:00:00'),
+(56, 'Matheus', 'Matheus', 'Queijo', 2, 38, 0, '2023-04-10 08:57:31'),
+(57, 'Matheus', 'Matheus', 'Lasanha', 2, 40, 0, '2023-04-10 08:57:31'),
+(58, 'Matheus', 'Matheus', 'Queijo', 2, 38, 58, '2023-04-10 08:58:43'),
+(59, 'Matheus', 'Matheus', 'Lasanha', 1, 20, 58, '2023-04-10 08:58:43');
 
 -- --------------------------------------------------------
 
@@ -98,11 +93,12 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`pro_cod`, `pro_vendedor`, `pro_descricao`, `pro_quantidade`, `pro_preco`, `pro_dtvalidade`) VALUES
-(5, 'Matheus', 'Queijo', 94, 19, '2023-06-15'),
-(4, 'Matheus', 'Lasanha', 100, 20, '2050-02-20'),
-(3, 'Matheus', 'Bisteca', 150, 15, '2026-02-28'),
-(6, 'Matheus', 'Hamburguer', 200, 20, '2023-06-08'),
-(7, 'Matheus', 'Alface', 195, 9, '2023-08-16');
+(5, 'Matheus', 'Queijo', 78, 19, '2023-06-15'),
+(4, 'Matheus', 'Lasanha', 90, 20, '2050-02-20'),
+(3, 'Matheus', 'Bisteca', 140, 15, '2026-02-28'),
+(6, 'Matheus', 'Hamburguer', 198, 20, '2023-06-08'),
+(7, 'Matheus', 'Alface', 195, 9, '2023-08-16'),
+(8, 'Matheus', 'Pão de queijo', 20, 20, '2023-08-17');
 
 -- --------------------------------------------------------
 
@@ -168,13 +164,13 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de tabela `compra`
 --
 ALTER TABLE `compra`
-  MODIFY `com_cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `com_cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `pro_cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `pro_cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `vendedor`

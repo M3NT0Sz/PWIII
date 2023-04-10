@@ -1,43 +1,30 @@
 <link rel="stylesheet" href="CSS/style.css">
 <div class="container">
   <div class="tabela">
+    <h1>Carrinho de compra</h1>
     <form action="finalizarcompra.php" method="post">
       <?php
       session_start();
 
       if (!isset($_SESSION['carrinho'])) {
-        echo "Seu carrinho de compras está vazio!";
+        echo "<center><h3>Seu carrinho de compras está vazio!</h3></center>";
       } else {
-        echo "<table border=2>";
-        echo "<tr>
-  <th>Codigo do Produto</th>
-  <th>Vendedor</th>
-  <th>Nome</th>
-  <th>Quantidade</th>
-  <th>Estoque</th>
-  <th>Preço</th>
-  <th>Data de Validade</th>
-  </tr>";
         $total = 0;
         foreach ($_SESSION['carrinho'] as $produto) {
           $cod = $produto['cod'];
           $preco_total = $produto['preco'];
-          echo "<tr>
-    <td>$cod</td>
-    <td>{$produto['nome']}</td>
-    <td>{$produto['produto']}</td>
-    <td>{$produto['quantcomp']}</td>
-    <td>{$produto['quantidade']}</td>
-    <td>{$produto['preco']}</td>
-    <td>{$produto['dtvalidade']}</td>
-    </tr>";
+          echo "<br>Codigo do Produto:$cod";
+          echo "<br>Vendedor:{$produto['nome']}";
+          echo "<br>Produto:{$produto['produto']}";
+          echo "<br>Quantidade:{$produto['quantcomp']}";
+          echo "<br>Estoque:{$produto['quantidade']}";
+          echo "<br>Preço:{$produto['preco']}";
+          echo "<br>Data de Validade:{$produto['dtvalidade']}";
           $total = $total + $preco_total;
+          echo "<hr>";
         }
-        echo "<tr>
-  <td colspan='5'>Total:</td>
-  <td>$total</td>
-  </tr>";
-        echo "</table>";
+        echo "Valor Total: ".$total;
+        echo "<input type=hidden name=total value=$total>";
       }
       ?>
       <input type="hidden" name="comprador" value="<?php echo $_SESSION['login'] ?>">

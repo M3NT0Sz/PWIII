@@ -26,7 +26,8 @@
                         $produto = $obj[3];
                         $quantidade = $obj[4];
                         $preco = $obj[5];
-                        $data = $obj[6];
+                        $preco_total = $obj[6];
+                        $data = $obj[7];
                     ?>
                     <div class="letras">
                         <?php
@@ -35,6 +36,7 @@
                         echo "<br>Comprador: $comprador";
                         echo "<br>Quantidade: $quantidade";
                         echo "<br>Preço: R$$preco";
+                        echo "<br>Preço Total: $preco_total";
                         echo "<br>Data de compra: $data";
                         ?>
                         </div>

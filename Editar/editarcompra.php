@@ -30,6 +30,7 @@ $sql = "SELECT * FROM compra WHERE codigo = '$cod'";
                         $produto = $_POST['produto'];
                         $quantidade = $_POST['quantidade'];
                         $preco = $_POST['preco'];
+                        $preco_total = $_POST['preco_total'];
                         $data = $_POST['data'];
                     }
                     ?>
@@ -53,6 +54,9 @@ $sql = "SELECT * FROM compra WHERE codigo = '$cod'";
                     </div>
                     <div class="registro">
                         <h3>Preço: <input value="<?php echo $preco; ?>" type=text name=preco></h3>
+                    </div>
+                    <div class="registro">
+                        <h3>Preço Total: <input value="<?php echo $preco_total; ?>" type=text name=preco_total></h3>
                     </div>
                     <div class="registro">
                         <h3>Data de compra: <input value="<?php echo $data; ?>" type=date name=data></h3>

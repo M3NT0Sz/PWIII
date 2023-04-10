@@ -40,7 +40,8 @@
                     $produto = $obj[3];
                     $quantidade = $obj[4];
                     $preco = $obj[5];
-                    $data = $obj[6];
+                    $preco_total = $obj[6];
+                    $data = $obj[7];
                 ?>
                     <div class="letras">
                         <?php
@@ -50,6 +51,7 @@
                         echo "<br>Produto: $produto";
                         echo "<br>Quantidade: $quantidade";
                         echo "<br>Preço: R$$preco";
+                        echo "<br>Preço Total: $preco_total";
                         echo "<br>Data de compra: $data";
                         echo "<br><form name=consulta method=post action=../Excluir/excluircompra.php>";
                         echo "<input type=hidden name=cod value=$cod>";
@@ -63,6 +65,7 @@
                         echo " <input type=hidden name=produto value=$produto> ";
                         echo " <input type=hidden name=quantidade value=$quantidade> ";
                         echo " <input type=hidden name=preco value=$preco> ";
+                        echo " <input type=hidden name=total value=$preco_total> ";
                         echo " <input type=hidden name=data value=$data> ";
                         echo " <input class=button-6 name=botao type=submit role=button value=Editar>";
                         echo "</div>";
@@ -74,7 +77,7 @@
                 }
                 ?>
             </div>
-            <a href="../principal.html"><button class="button-6" type="button" role="button">Voltar</button></a>
+            <a href="../vendedor.php"><button class="button-6" type="button" role="button">Voltar</button></a>
         </div>
     </div>
 </body>
