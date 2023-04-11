@@ -13,13 +13,10 @@ $dtvalidade = $_POST['dtvalidade'];
 
 $preco = $quantcomp * $preco;
 
-// Verifique se o carrinho de compras já existe na sessão do usuário
 if (!isset($_SESSION['carrinho'])) {
-    // Se o carrinho de compras ainda não existe, inicialize-o com um array vazio
     $_SESSION['carrinho'] = array();
 }
 
-// Adicione as informações do produto ao carrinho de compras
 $_SESSION['carrinho'][] = array(
     'cod' => $cod,
     'nome' => $nome,

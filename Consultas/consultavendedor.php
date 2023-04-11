@@ -66,7 +66,7 @@
                 }
                 ?>
             </div>
-            <a href="../principal.html"><button class="button-6" type="button" role="button">Voltar</button></a>
+            <a href="../vendedor.php"><button class="button-6" type="button" role="button">Voltar</button></a>
         </div>
     </div>
 </body>

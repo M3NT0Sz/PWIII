@@ -5,18 +5,10 @@
         session_start();
         include_once("conexao.php");
 
-        if (!isset($_SESSION['login'])) {
-            header("Location: login.php");
-            exit;
-        }
-
         if (!isset($_SESSION['carrinho'])) {
             echo "<h3>Seu carrinho de compras está vazio!</h3>";
             echo "<a href=clientes.php><button class=button-6>Voltar</button></a>";
-            exit;
         }
-
-        mysqli_begin_transaction($conn);
 
         $comprador = $_POST['comprador'];
         $total = $_POST['total'];
@@ -43,12 +35,8 @@
 
         unset($_SESSION['carrinho']);
 
-        mysqli_commit($conn);
-
         echo "<h3>Sua compra foi concluída com sucesso!<h3>";
         echo "<a href=clientes.php><button class=button-6>Voltar</button></a>";
-
-        mysqli_close($conn);
         ?>
     </div>
 </div>
