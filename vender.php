@@ -26,7 +26,7 @@ include_once("conexao.php");
                     <h3>Descrição:<input type="text" name="descricao"></h3>
                 </div>
                 <div class="registro">
-                    <h3>Quantidade:<input type="text" name="quantidade"></h3>
+                    <h3>Quantidade:<input type="number" name="quantidade"></h3>
                 </div>
                 <div class="registro">
                     <h3>Preço:<input type="text" name="preco"></h3>

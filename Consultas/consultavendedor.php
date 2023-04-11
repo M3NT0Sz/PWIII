@@ -54,7 +54,7 @@
                         echo " <input type=hidden name=cod value=$cod> ";
                         echo " <input type=hidden name=nome value=$nome> ";
                         echo " <input type=hidden name=senha value=$senha> ";
-                        echo " <input type=hidden name=endereco value=$endereco> ";
+                        echo " <input type=hidden name=endereco value='$endereco'> ";
                         Echo " <input type=hidden name=dtnascimento value=$dtnascimento> ";
                         echo " <input class=button-6 name=botao type=submit role=button value=Editar>";
                         echo "</div>";

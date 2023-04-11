@@ -54,7 +54,7 @@ $sql = "SELECT * FROM usuarios WHERE codigo = '$cod'";
                         <h3>Data Nascimento: <input value="<?php echo $dtnascimento; ?>" type=date name=dtnascimento></h3>
                     </div>
                     <div class="registro">
-                        <input class="button-6" role="button" type=reset value=Limpar>
+                        <input class="button-6" role="button" type=submit value=Editar>
                         <a href="../clientes.php"><button class="button-6" type="button" role="button">Voltar</button></a>
                     </div>
                 </form>

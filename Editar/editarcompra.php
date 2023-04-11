@@ -30,7 +30,7 @@ $sql = "SELECT * FROM compra WHERE codigo = '$cod'";
                         $produto = $_POST['produto'];
                         $quantidade = $_POST['quantidade'];
                         $preco = $_POST['preco'];
-                        $preco_total = $_POST['preco_total'];
+                        $preco_total = $_POST['total'];
                         $data = $_POST['data'];
                     }
                     ?>
